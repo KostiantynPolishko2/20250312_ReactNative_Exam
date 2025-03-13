@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { View, Text } from "react-native";
 import { StylesProducts } from "../styles/StylesProducts";
-import WeaponsItems from "./WeaponsItems";
+import WeaponsItems from "./weapons-items/WeaponsItems";
 import { WeaponsService } from "../services/WeaponsService";
 
 const weaponsService = new WeaponsService();

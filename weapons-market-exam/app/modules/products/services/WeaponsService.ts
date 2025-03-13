@@ -8,9 +8,10 @@ export class WeaponsService implements IWeaponsServices {
 
         let weaponsItems:WeaponsItemProps[] =  weaponsCardDto.length? weaponsCardDto.filter(item=>item.isVisible).
             map(item => ({
+                name: item.name.toLocaleLowerCase(),
                 isVisible: item.isVisible,
-                model: item.model,
-                price: item.price,
+                model: item.model.toUpperCase(),
+                price: Math.round(item.price * 1.1),
             })) : [];
 
         return weaponsItems;
@@ -22,7 +23,7 @@ export class WeaponsService implements IWeaponsServices {
             isVisible: weaponsCardDto.isVisible,
             model: weaponsCardDto.model.toUpperCase(),
             price: Math.round(weaponsCardDto.price * 1.1),
-            name: weaponsCardDto.name.toUpperCase(),
+            name: weaponsCardDto.name.toLocaleLowerCase(),
             image_path: weaponsCardDto.image_path,
         };
 

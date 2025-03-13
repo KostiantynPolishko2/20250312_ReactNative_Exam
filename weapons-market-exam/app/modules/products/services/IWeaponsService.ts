@@ -1,13 +1,13 @@
 import { WeaponsCardDtoProps } from "@/app/interface/types/AdminServerTypes";
 
 export type WeaponsItemProps = {
+    name: string,
     isVisible: boolean,
     model: string,
     price: number,
 }
 
 export type WeaponsModelProps = WeaponsItemProps & {
-    name: string,
     image_path: string,
 }
 

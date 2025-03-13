@@ -11,7 +11,7 @@ export const StylesApp = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
 });
 
 export const PositionStyle = StyleSheet.create({

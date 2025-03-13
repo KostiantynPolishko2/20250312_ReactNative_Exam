@@ -2,11 +2,13 @@ import { WeaponsDataDtoProps } from "@/app/interface/types/AdminServerTypes";
 import { WeaponsItemProps } from "../services/IWeaponsService";
 
 export const weaponsItemsProps: WeaponsItemProps[] = [
-    { isVisible: true, model: 'model1', price: 1000, },
-    { isVisible: true, model: 'model2', price: 1001, },
-    { isVisible: true, model: 'model3', price: 1002, },
-    { isVisible: true, model: 'model4', price: 1003, },
-    { isVisible: true, model: 'model5', price: 1004, },
+    { name: 'Пистолет', isVisible: true, model: 'model1', price: 1001, },
+    { name: 'Пистолет', isVisible: true, model: 'model2', price: 1002, },
+    { name: 'Снайперская вистовка', isVisible: true, model: 'model3', price: 1003, },
+    { name: 'Снайперская вистовка', isVisible: true, model: 'model4', price: 1004, },
+    { name: 'Автомат', isVisible: true, model: 'model5', price: 1005, },
+    { name: 'Автомат', isVisible: true, model: 'model6', price: 1006, },
+    { name: 'Автомат', isVisible: true, model: 'model7', price: 1007, },
 ];
 
 export const newWeaponsModels: WeaponsDataDtoProps[] = [
