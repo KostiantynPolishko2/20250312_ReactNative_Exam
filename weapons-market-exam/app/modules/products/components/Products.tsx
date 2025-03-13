@@ -9,7 +9,7 @@ const weaponsService = new WeaponsService();
 const Products: FC = () => {
     return(
         <View style={StylesProducts.body}>
-            <Text style={StylesProducts.textRow}>products module</Text>
+            {/* <Text style={StylesProducts.textRow}>products module</Text> */}
             <WeaponsItems weaponsService={weaponsService}/>
         </View>
     );

@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
+import { StylesApp } from "@/app/interface/styles/StylesApp";
 
 export const WeaponsItemRow = StyleSheet.create({
     card: {
@@ -55,9 +56,32 @@ export const WeaponsItemRow = StyleSheet.create({
     }
 });
 
-export const WeaponsItem = StyleSheet.create({
+export const WeaponsItemWrap = StyleSheet.create({
     body: {
         marginTop: 2,
-        minWidth: '80%',
+        // minWidth: '80%',
     }
+});
+
+export const SectionListStyle = StyleSheet.create({
+    container: {
+        padding: 5,
+        minWidth: '80%',
+        backgroundColor: '#aebfbf',
+        borderRadius: 5,
+    },
+    header: {
+        fontSize: 16,
+        backgroundColor: '#969393',
+        color: 'wheat',
+        paddingLeft: 5,
+        textShadowOffset: {width:2, height: 2},
+        textShadowRadius: 4,
+        textShadowColor: 'black',
+        borderBottomWidth: 1,
+        borderColor: '#757474',
+    },
+    title: {
+        fontSize: 24,
+    },
 });

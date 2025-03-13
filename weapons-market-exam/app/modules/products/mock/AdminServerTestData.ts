@@ -9,6 +9,7 @@ export const weaponsItemsData: WeaponsItemProps[] = [
     { name: 'Автомат', isVisible: true, model: 'model5', price: 1005, },
     { name: 'Автомат', isVisible: true, model: 'model6', price: 1006, },
     { name: 'Автомат', isVisible: true, model: 'model7', price: 1007, },
+    { name: 'Автомат', isVisible: true, model: 'model5', price: 1005, },
 ];
 
 export const newWeaponsModels: WeaponsDataDtoProps[] = [

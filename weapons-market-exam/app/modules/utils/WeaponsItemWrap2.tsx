@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import { WeaponsItem as styles } from "../products/styles/StylesWeaponsItems";
+import { WeaponsItemWrap as styles } from "../products/styles/StylesWeaponsItems";
 import { WeaponsItemProps } from "../products/services/IWeaponsService";
 import WeaponsItemRow from "../products/components/weapons-items/WeaponsItemRow";
 
