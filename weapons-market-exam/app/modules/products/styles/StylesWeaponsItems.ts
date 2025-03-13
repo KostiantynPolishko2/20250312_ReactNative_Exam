@@ -54,3 +54,10 @@ export const WeaponsItemRow = StyleSheet.create({
         textShadowRadius: 4,
     }
 });
+
+export const WeaponsItem = StyleSheet.create({
+    body: {
+        marginTop: 2,
+        minWidth: '80%',
+    }
+});

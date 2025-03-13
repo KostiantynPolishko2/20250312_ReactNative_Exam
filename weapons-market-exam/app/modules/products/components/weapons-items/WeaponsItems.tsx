@@ -1,10 +1,13 @@
 import React, { FC } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { IWeaponsServices } from "@/app/modules/products/services/IWeaponsService";
 import { PositionStyle } from "@/app/interface/styles/StylesApp";
 import useWeaponsItems from "@/app/modules/products/hooks/useWeaponsItems";
 import WeaponsItemRow from "./WeaponsItemRow";
-import { weaponsItemsProps as weaponsItems } from "@/app/modules/products/mock/AdminServerTestData";
+import { weaponsItemsData as weaponsItems } from "@/app/modules/products/mock/AdminServerTestData";
+// import WeaponsItemWrap from "./WeaponsItemWrap";
+import WeaponsItemWrap from "@/app/modules/utils/WeaponsItemWrap";
+import WeaponsItemWrap2 from "@/app/modules/utils/WeaponsItemWrap2";
 
 interface WeaponsServiceProps {
     weaponsService: IWeaponsServices;
@@ -20,9 +23,11 @@ const WeaponsItems: FC<WeaponsServiceProps> = ({weaponsService}) => {
     return (
         <View style={PositionStyle.column}>
             {weaponsItems.map((weaponsItem, index) => (
-                <View key={index} style={{marginTop: 2}}>
-                    <WeaponsItemRow weaponsItem={weaponsItem}/>
-                </View>
+                // version 1 of FC due to DI
+                // <WeaponsItemWrap key={index} FC={WeaponsItemRow} weaponsItemProps={weaponsItem}/>
+
+                // version 2 of FC due to DI
+                <WeaponsItemWrap2 key={index} weaponsItemProps={weaponsItem}/>
             ))}
         </View>
     );
