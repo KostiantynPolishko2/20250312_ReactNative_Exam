@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { StylesProducts } from "../styles/StylesProducts";
 import WeaponsItems from "./weapons-items/WeaponsItems";
 import { WeaponsService } from "../services/WeaponsService";
@@ -23,11 +23,13 @@ const Products: FC = () => {
     return(
         <View style={StylesProducts.body}>
             <SearchBar _setIsHeader={setIsheader} _input={input} _setInput={setInput}/>
-            <ContextSetValueStr.Provider value={setWeaponsModel}>
-                <WeaponsItems weaponsService={weaponsService} isHeader={isHeader} input={input}/>
-            </ContextSetValueStr.Provider>
             <WithErrorBoundary>
-                <WeaponsModel weaponsService={weaponsService} model="mg3"/>
+                <ContextSetValueStr.Provider value={setWeaponsModel}>
+                    <WeaponsItems weaponsService={weaponsService} isHeader={isHeader} input={input}/>
+                </ContextSetValueStr.Provider>
+            </WithErrorBoundary>
+            <WithErrorBoundary>
+                {weaponsModel !== ''? <WeaponsModel weaponsService={weaponsService} model={weaponsModel}/> : <></>}
             </WithErrorBoundary>
         </View>
     );

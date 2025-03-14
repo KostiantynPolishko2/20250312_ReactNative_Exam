@@ -18,7 +18,7 @@ const WeaponsModel: FC<WeaponsServiceProps> = ({weaponsService, model}) => {
     
     if (error) throw new Error(error.message);
     
-    // console.log('weapons model:', weaponsModel);
+    // console.log('weapons model:', weaponsModel.image_path);
 
     return (
         <View style={styles.body}>
