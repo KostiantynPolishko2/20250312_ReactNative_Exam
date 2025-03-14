@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useMemo, useContext } from "react";
 import { View, SectionList, Text } from "react-native";
 import { IWeaponsServices } from "@/app/modules/products/services/IWeaponsService";
 import { SectionListStyle, WeaponsItemsStyle } from "../../styles/StylesWeaponsItems";
@@ -7,6 +7,7 @@ import useWeaponsItems from "@/app/modules/products/hooks/useWeaponsItems";
 import { WeaponsItemProps } from "@/app/modules/products/services/IWeaponsService";
 import WeaponsItemWrap2 from "@/app/modules/products/entities/WeaponsItemWrap2";
 import {groupWeaponsItemsByName, getWeaponsItemsBySearch} from "@/app/modules/utils/TreatmentWeaponsItems";
+import { ContextIsModel } from "../../context/context";
 
 type GroupWeaponsItem = {
     title: string, 
@@ -21,6 +22,7 @@ type WeaponsServiceProps = {
 
 const WeaponsItems: FC<WeaponsServiceProps> = (props) => {
 
+    const isModel = useContext(ContextIsModel);
     const {loading, error, weaponsItems} = useWeaponsItems(props.weaponsService);
     
     const groupWeaponsItems: GroupWeaponsItem[] = useMemo(()=>{
@@ -36,7 +38,7 @@ const WeaponsItems: FC<WeaponsServiceProps> = (props) => {
     if (error) throw new Error(error.message);
 
     return (
-        <View style={WeaponsItemsStyle.body}>
+        <View style={[WeaponsItemsStyle.body, {height: isModel? '55%' : '100%'}]}>
             <SectionList
                 style={SectionListStyle.container}
                 stickySectionHeadersEnabled={true}

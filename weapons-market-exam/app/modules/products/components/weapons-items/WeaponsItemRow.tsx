@@ -7,12 +7,12 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { ContextSetValueStr } from "../../context/context";
 
 const WeaponsItemRow: FC<{weaponsItem: WeaponsItemProps}> = ({weaponsItem}) => {
+ 
+    const setModel = useContext(ContextSetValueStr);
 
-    const setWeaponsModel = useContext(ContextSetValueStr);
-    
     return(
         <View style={styles.cardWrapper}>
-          <TouchableOpacity onPress={() => {setWeaponsModel(weaponsItem.model);}}>
+          <TouchableOpacity onPress={() => {setModel(weaponsItem.model);}}>
             <View style={styles.card}>
                 <View style={[styles.cardImg, styles.cardAvatar]}>
                     <MaterialCommunityIcons style={[styles.cardAvatarText, styles.textShadow]} name='pistol'/>

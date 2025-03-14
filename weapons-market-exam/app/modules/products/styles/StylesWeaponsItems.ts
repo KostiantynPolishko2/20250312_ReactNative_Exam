@@ -66,7 +66,6 @@ export const WeaponsItemWrap = StyleSheet.create({
 export const WeaponsItemsStyle = StyleSheet.create({
     body: {
         width: '80%', 
-        height: '55%',
         position: 'relative', 
         left: '10%',
     }

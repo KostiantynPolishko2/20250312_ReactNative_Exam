@@ -1,22 +1,23 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import { Button } from "react-native-elements";
 import { View, StyleSheet, Alert, Text } from "react-native";
+import { ContextSetValueStr } from "../../../context/context";
 
-type CloseButtonProps = {
-    isAble?: boolean,
-    handleClose: ()=>void,
-}
+const CloseButton: FC = () => {
 
-const CloseButton: FC<CloseButtonProps> = (props) => 
-    <View style={styles.body}>
-        <Button 
-            title="CLOSE"
-            onPress={props.handleClose}
-            buttonStyle = {styles.buttonSize}
-            titleStyle = {styles.buttonText}
-            disabled = {!props.isAble}
-        />
-    </View>
+    const setModel = useContext(ContextSetValueStr);
+
+    return (
+        <View style={styles.body}>
+            <Button 
+                title="CLOSE"
+                onPress={()=>{setModel('');}}
+                buttonStyle = {styles.buttonSize}
+                titleStyle = {styles.buttonText}
+            />
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
     body: {

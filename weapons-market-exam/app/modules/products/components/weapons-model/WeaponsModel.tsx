@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { View, Text } from "react-native";
+import { useRouter } from "expo-router";
 import WeaponsImage from "./sections/WeaponsImage";
 import WeaponsData from "./sections/WeaponsData";
 import OrderButton from "./sections/OrderButton";
@@ -11,6 +12,7 @@ import { WeaponsModelStyle2 as StylesCard } from "@/app/modules/products/styles/
 
 const WeaponsModel:FC<{item: WeaponsModelProps}> = ({item}) => {
 
+    const router = useRouter();
     const bgColor = item.isVisible? '#7b99a3' : '#a3a395';
 
     return(
@@ -21,8 +23,8 @@ const WeaponsModel:FC<{item: WeaponsModelProps}> = ({item}) => {
                 <View>
                     <WeaponsData data={item}/>
                     <View style={PositionStyle.row}>
-                        <OrderButton isAble={item.isVisible} handleOrder={()=>{}}/>
-                        <CloseButton isAble={true} handleClose={()=>{}}/>
+                        <OrderButton isAble={item.isVisible} handleOrder={() => router.push('/modules/order/components/Orders')}/>
+                        <CloseButton/>
                     </View>
                 </View>
             </View>
