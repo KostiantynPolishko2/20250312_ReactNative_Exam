@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { WeaponsItemProps } from '../products/services/IWeaponsService';
+import { WeaponsItemProps } from '../services/IWeaponsService';
 
 type GroupWeaponsItem = {
     title: string, 
