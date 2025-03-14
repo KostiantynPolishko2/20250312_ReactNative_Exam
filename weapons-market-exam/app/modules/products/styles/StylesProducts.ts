@@ -46,6 +46,7 @@ export const SearchBarStyles = StyleSheet.create({
         width: '100%',
         fontSize: 16,
         fontWeight: '500',
+        fontFamily: 'System',
     },
     searchContent: {
         paddingLeft: 24,

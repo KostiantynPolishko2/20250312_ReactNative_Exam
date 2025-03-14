@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useMemo, useEffect } from "react";
 import { View, SectionList, Text } from "react-native";
 import { IWeaponsServices } from "@/app/modules/products/services/IWeaponsService";
 import { SectionListStyle, WeaponsItemsStyle } from "../../styles/StylesWeaponsItems";
@@ -6,8 +6,7 @@ import useWeaponsItems from "@/app/modules/products/hooks/useWeaponsItems";
 import { weaponsItemsData as weaponsItems } from "@/app/modules/products/mock/AdminServerTestData";
 import { WeaponsItemProps } from "@/app/modules/products/services/IWeaponsService";
 import WeaponsItemWrap2 from "@/app/modules/entities/WeaponsItemWrap2";
-import { StylesProducts } from "../../styles/StylesProducts";
-import groupWeaponsItemsByName from "@/app/modules/utils/GroupWeaponsItems";
+import {groupWeaponsItemsByName, getWeaponsItemsBySearch} from "@/app/modules/utils/TreatmentWeaponsItems";
 
 type GroupWeaponsItem = {
     title: string, 
@@ -16,7 +15,7 @@ type GroupWeaponsItem = {
 
 type WeaponsServiceProps = {
     isHeader: boolean,
-    input: string | undefined,
+    input: string,
     weaponsService: IWeaponsServices;
 }
 
@@ -31,12 +30,16 @@ const WeaponsItems: FC<WeaponsServiceProps> = (props) => {
         return groupWeaponsItemsByName(weaponsItems);
     }, [weaponsItems]);
 
+    const searchWeaponsItems: GroupWeaponsItem[] = useMemo(() => {
+        return getWeaponsItemsBySearch(props.input, groupWeaponsItems);
+    }, [props.input]);
+
     return (
         <View style={WeaponsItemsStyle.body}>
             <SectionList
                 style={SectionListStyle.container}
                 stickySectionHeadersEnabled={true}
-                sections={groupWeaponsItems || []}
+                sections={searchWeaponsItems || groupWeaponsItems}
                 keyExtractor={(item, index) => `${index}_${item.model}`}
                 renderSectionHeader={({section: {title}}) => (
                     props.isHeader? <Text style={SectionListStyle.header}>{title}</Text> : <></>
