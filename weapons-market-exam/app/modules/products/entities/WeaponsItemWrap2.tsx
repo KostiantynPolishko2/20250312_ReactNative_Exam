@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import { WeaponsItemWrap as styles } from "../products/styles/StylesWeaponsItems";
-import { WeaponsItemProps } from "../products/services/IWeaponsService";
-import WeaponsItemRow from "../products/components/weapons-items/WeaponsItemRow";
+import { WeaponsItemWrap as styles } from "../styles/StylesWeaponsItems";
+import { WeaponsItemProps } from "../services/IWeaponsService";
+import WeaponsItemRow from "../components/weapons-items/WeaponsItemRow";
 
 type Props = {
     weaponsItemProps: WeaponsItemProps

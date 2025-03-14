@@ -5,7 +5,7 @@ import { SectionListStyle, WeaponsItemsStyle } from "../../styles/StylesWeaponsI
 import useWeaponsItems from "@/app/modules/products/hooks/useWeaponsItems";
 import { weaponsItemsData as weaponsItems } from "@/app/modules/products/mock/AdminServerTestData";
 import { WeaponsItemProps } from "@/app/modules/products/services/IWeaponsService";
-import WeaponsItemWrap2 from "@/app/modules/entities/WeaponsItemWrap2";
+import WeaponsItemWrap2 from "@/app/modules/products/entities/WeaponsItemWrap2";
 import {groupWeaponsItemsByName, getWeaponsItemsBySearch} from "@/app/modules/utils/TreatmentWeaponsItems";
 
 type GroupWeaponsItem = {

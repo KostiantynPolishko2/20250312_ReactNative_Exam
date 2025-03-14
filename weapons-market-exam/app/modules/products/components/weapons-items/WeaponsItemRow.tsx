@@ -1,15 +1,18 @@
-import React, { FC } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import React, { FC, useContext } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 import FeatherIcon from '@expo/vector-icons/Feather';
 import { WeaponsItemRow as styles } from "@/app/modules/products/styles/StylesWeaponsItems";
 import { WeaponsItemProps } from "../../services/IWeaponsService";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { contextSetValueStr } from "../../context/context";
 
 const WeaponsItemRow: FC<{weaponsItem: WeaponsItemProps}> = ({weaponsItem}) => {
+
+    const setWeaponsModel = useContext(contextSetValueStr);
     
     return(
         <View style={styles.cardWrapper}>
-          <TouchableOpacity onPress={() => {console.log('onPress weaponnsItem')}}>
+          <TouchableOpacity onPress={() => {setWeaponsModel(weaponsItem.model);}}>
             <View style={styles.card}>
                 <View style={[styles.cardImg, styles.cardAvatar]}>
                     <MaterialCommunityIcons style={[styles.cardAvatarText, styles.textShadow]} name='pistol'/>

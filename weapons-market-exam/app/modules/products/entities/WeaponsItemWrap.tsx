@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 import { WeaponsItemWrap as styles } from "@/app/modules/products/styles/StylesWeaponsItems";
-import { WeaponsItemProps } from "../products/services/IWeaponsService";
+import { WeaponsItemProps } from "../services/IWeaponsService";
 
 type Props = {
     FC: React.ElementType,
