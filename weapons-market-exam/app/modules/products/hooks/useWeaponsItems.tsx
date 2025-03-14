@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { WeaponsItemProps } from "../services/IWeaponsService";
-import useGetWeaponsCardsDto from "./useGetWeaponsCardsDto";
+import useGetWeaponsCardsDto from "../../../interface/hooks/useGetWeaponsCardsDto";
 import { IWeaponsServices } from "../services/IWeaponsService";
 
 const useWeaponsItems = (weaponsService: IWeaponsServices) => {

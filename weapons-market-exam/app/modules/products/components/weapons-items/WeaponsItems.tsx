@@ -2,7 +2,7 @@ import React, { FC, useMemo, useEffect } from "react";
 import { View, SectionList, Text } from "react-native";
 import { IWeaponsServices } from "@/app/modules/products/services/IWeaponsService";
 import { SectionListStyle, WeaponsItemsStyle } from "../../styles/StylesWeaponsItems";
-import useWeaponsItems from "@/app/modules/products/hooks/useWeaponsItems";
+// import useWeaponsItems from "@/app/modules/products/hooks/useWeaponsItems";
 import { weaponsItemsData as weaponsItems } from "@/app/modules/products/mock/AdminServerTestData";
 import { WeaponsItemProps } from "@/app/modules/products/services/IWeaponsService";
 import WeaponsItemWrap2 from "@/app/modules/products/entities/WeaponsItemWrap2";

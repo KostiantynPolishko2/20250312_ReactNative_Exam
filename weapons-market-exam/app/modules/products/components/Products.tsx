@@ -5,6 +5,7 @@ import WeaponsItems from "./weapons-items/WeaponsItems";
 import { WeaponsService } from "../services/WeaponsService";
 import SearchBar from "./SearchBar";
 import { contextSetValueStr } from "../context/context";
+import WeaponsModel from "./WeaponsModel";
 
 const weaponsService = new WeaponsService();
 
@@ -24,9 +25,7 @@ const Products: FC = () => {
             <contextSetValueStr.Provider value={setWeaponsModel}>
                 <WeaponsItems weaponsService={weaponsService} isHeader={isHeader} input={input}/>
             </contextSetValueStr.Provider>
-            <View>
-                <Text>weapons model</Text>
-            </View>
+            <WeaponsModel weaponsService={weaponsService} model="mg3"/>
         </View>
     );
 };
