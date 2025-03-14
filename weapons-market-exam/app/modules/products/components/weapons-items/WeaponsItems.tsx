@@ -34,9 +34,6 @@ const WeaponsItems: FC<WeaponsServiceProps> = (props) => {
     if (loading) return <Text>...loaded weapons items</Text>;
     
     if (error) throw new Error(error.message);
-    
-    // console.log('weapons items:', groupWeaponsItems);
-    // console.log('weapons items:', searchWeaponsItems);
 
     return (
         <View style={WeaponsItemsStyle.body}>

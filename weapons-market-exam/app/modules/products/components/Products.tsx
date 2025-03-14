@@ -5,7 +5,7 @@ import WeaponsItems from "./weapons-items/WeaponsItems";
 import { WeaponsService } from "../services/WeaponsService";
 import SearchBar from "./SearchBar";
 import { ContextSetValueStr } from "../context/context";
-import WeaponsModel from "./WeaponsModel";
+import WeaponsModelHandle from "./WeaponsModelHandle";
 import WithErrorBoundary from "@/app/interface/hocs/WithErrorBoundary";
 
 const weaponsService = new WeaponsService();
@@ -29,7 +29,7 @@ const Products: FC = () => {
                 </ContextSetValueStr.Provider>
             </WithErrorBoundary>
             <WithErrorBoundary>
-                {weaponsModel !== ''? <WeaponsModel weaponsService={weaponsService} model={weaponsModel}/> : <></>}
+                {weaponsModel !== ''? <WeaponsModelHandle weaponsService={weaponsService} model={weaponsModel}/> : <></>}
             </WithErrorBoundary>
         </View>
     );

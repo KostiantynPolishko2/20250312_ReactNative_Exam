@@ -1,5 +1,6 @@
 import { WeaponsDataDtoProps } from "@/app/interface/types/AdminServerTypes";
 import { WeaponsItemProps } from "../services/IWeaponsService";
+import { WeaponsModelProps } from "../services/IWeaponsService";
 
 export const weaponsItemsData: WeaponsItemProps[] = [
     { name: 'Пистолет', isVisible: true, model: 'model1', price: 1001, },
@@ -11,6 +12,14 @@ export const weaponsItemsData: WeaponsItemProps[] = [
     { name: 'Автомат', isVisible: true, model: 'model7', price: 1007, },
     { name: 'Автомат', isVisible: true, model: 'model5', price: 1005, },
 ];
+
+export const weaponsModelData: WeaponsModelProps = {
+    name: 'name',
+    isVisible: true,
+    model: 'model',
+    price: 0.00,
+    image_path: 'https://sqlmockdata.blob.core.windows.net/images/ukraine-weapons.png',
+}
 
 export const newWeaponsModels: WeaponsDataDtoProps[] = [
     {
