@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const contextSetValueStr = createContext<(value: string)=>void>(()=>{});
+export const ContextSetValueStr = createContext<(value: string)=>void>(()=>{});

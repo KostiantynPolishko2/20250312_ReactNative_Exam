@@ -4,11 +4,11 @@ import FeatherIcon from '@expo/vector-icons/Feather';
 import { WeaponsItemRow as styles } from "@/app/modules/products/styles/StylesWeaponsItems";
 import { WeaponsItemProps } from "../../services/IWeaponsService";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { contextSetValueStr } from "../../context/context";
+import { ContextSetValueStr } from "../../context/context";
 
 const WeaponsItemRow: FC<{weaponsItem: WeaponsItemProps}> = ({weaponsItem}) => {
 
-    const setWeaponsModel = useContext(contextSetValueStr);
+    const setWeaponsModel = useContext(ContextSetValueStr);
     
     return(
         <View style={styles.cardWrapper}>
